@@ -17,17 +17,18 @@ const Cart: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      <div className="flex justify-between items-center max-w-6xl mx-auto mb-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-600 flex items-center gap-2">
-          <span role="img" aria-label="cricket">🏏</span> Cricket App
-        </h1>
-        <Link
-          to="/"
-          className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm sm:text-base transition"
-        >
-          Go Shopping
-        </Link>
-      </div>
+    <div className="flex flex-col sm:flex-row justify-between items-center max-w-6xl mx-auto mb-8 gap-4">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-600 flex items-center gap-2">
+    <span role="img" aria-label="cricket">🏏</span> Cricket App
+  </h1>
+  <Link
+    to="/"
+    className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-base font-medium transition w-full sm:w-auto text-center"
+  >
+    Go Shopping
+  </Link>
+</div>
+
 
       {cartItems.length === 0 ? (
         <div className="max-w-5xl mx-auto text-center py-20">
@@ -74,7 +75,6 @@ const Cart: React.FC = () => {
             ))}
           </div>
 
-          {/* Footer Actions */}
           <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <button
               onClick={handleClearCart}

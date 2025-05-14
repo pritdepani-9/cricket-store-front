@@ -5,7 +5,6 @@ interface FilterProps {
 }
 
 const ProductFilter: React.FC<FilterProps> = ({ onCategoryChange }) => {
-  // Define the options in an array
   const categories = ['Clothing', 'Accessories', 'Equipment'];
 
   return (
@@ -16,7 +15,6 @@ const ProductFilter: React.FC<FilterProps> = ({ onCategoryChange }) => {
         onChange={(e) => onCategoryChange(e.target.value)}
       >
         <option value="">All</option>
-        {/* Map over the categories array to generate <option> elements */}
         {categories.map((category) => (
           <option key={category} value={category}>
             {category}
