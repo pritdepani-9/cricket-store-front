@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { getCartItems, clearCart } from '../utils/cartUtils';
 import { Product } from '../utils/fakeProducts';
 import { Link } from 'react-router-dom';
+import { useCart } from '../utils/CartContext';
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
+  const { updateCartCount } = useCart();
 
   useEffect(() => {
     setCartItems(getCartItems());
@@ -13,6 +15,7 @@ const Cart: React.FC = () => {
   const handleClearCart = () => {
     clearCart();
     setCartItems([]);
+    updateCartCount();
   };
 
   return (

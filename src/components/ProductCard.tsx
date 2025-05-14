@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Product } from '../utils/fakeProducts';
 import { addToCart } from '../utils/cartUtils';
 import toast from 'react-hot-toast';
+import { useCart } from '../utils/CartContext';
 
 interface Props {
   product: Product;
@@ -10,6 +11,7 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product }) => {
   const navigate = useNavigate();
+  const { updateCartCount } = useCart();
 
   const handleDetails = () => {
     navigate(`/product/${product.id}`, { state: { product } });
@@ -18,6 +20,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
     addToCart(product);
+    updateCartCount();
     toast.success(`${product.name} added to cart!`);
   };
 

@@ -2,16 +2,19 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { addToCart } from '../utils/cartUtils';
 import toast from 'react-hot-toast';
+import { useCart } from '../utils/CartContext';
 
 
 const ProductDetails: React.FC = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
+  const { updateCartCount } = useCart();
   const product = state?.product;
 
     const handleAddToCart = (e: React.MouseEvent) => {
       e.stopPropagation();
       addToCart(product);
+      updateCartCount();
      toast.success(`${product?.name} added to cart!`);
     };
 
