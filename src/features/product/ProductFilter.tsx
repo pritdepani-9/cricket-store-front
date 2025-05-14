@@ -5,7 +5,15 @@ interface FilterProps {
 }
 
 const ProductFilter: React.FC<FilterProps> = ({ onCategoryChange }) => {
-  const categories = ['Clothing', 'Accessories', 'Equipment'];
+  // These categories should match exactly with what's in your generateFakeProducts
+  const categories = [
+    'Cricket Bats',
+    'Cricket Balls',
+    'Protective Gear',
+    'Cricket Clothing',
+    'Cricket Footwear',
+    'Cricket Accessories'
+  ];
 
   return (
     <div className="mb-4">
@@ -14,7 +22,7 @@ const ProductFilter: React.FC<FilterProps> = ({ onCategoryChange }) => {
         className="border p-2 rounded"
         onChange={(e) => onCategoryChange(e.target.value)}
       >
-        <option value="">All</option>
+        <option value="">All Categories</option>
         {categories.map((category) => (
           <option key={category} value={category}>
             {category}

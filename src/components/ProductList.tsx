@@ -57,10 +57,32 @@ const ProductList: React.FC = () => {
 
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {displayProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+  {displayProducts.length > 0 ? (
+    displayProducts.map((product) => (
+      <ProductCard key={product.id} product={product} />
+    ))
+  ) : (
+    <div className="col-span-full flex flex-col items-center justify-center text-center py-20">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-36 w-36 text-gray-400 animate-bounce mb-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3 3h2l.4 2M7 13h14l-1.5 6H7.4M7 13L5.4 5H21M7 13H5.4M7 13l1.5 6m5.1-6l1.5 6m-6 0a1.5 1.5 0 11-3 0m13.5 0a1.5 1.5 0 11-3 0"
+        />
+      </svg>
+      <h2 className="text-2xl font-bold text-gray-700 mb-2">Oops, nothing found!</h2>
+      <p className="text-gray-500 text-lg">Try adjusting your filters or search keywords.</p>
+    </div>
+  )}
+</div>
+
     </div>
   );
 };
