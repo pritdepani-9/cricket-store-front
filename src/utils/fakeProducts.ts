@@ -7,12 +7,22 @@ export interface Product {
   image: string;
   description: string;
   category: string;
+    sizes?: string[];
 }
 
 export const generateFakeProducts = (count: number): Product[] => {
   const products: Product[] = [];
 
   const categories = ['Cricket Bats', 'Cricket Balls', 'Protective Gear', 'Cricket Clothing', 'Cricket Footwear', 'Cricket Accessories'];
+
+  const categorySizes: Record<string, string[]> = {
+    'Cricket Bats': ['Short Handle', 'Long Handle', 'Harrow', 'Size 6', 'Size 5'],
+    'Cricket Balls': ['Standard (156g)', 'Junior (133g)', 'Training (142g)'],
+    'Protective Gear': ['S', 'M', 'L', 'XL', 'XXL'],
+    'Cricket Clothing': ['S', 'M', 'L', 'XL', 'XXL'],
+    'Cricket Footwear': ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12'],
+    'Cricket Accessories': ['One Size']
+  };
   
   const cricketProductNames = {
     'Cricket Bats': [
@@ -90,6 +100,8 @@ export const generateFakeProducts = (count: number): Product[] => {
     ];
      const description = productDescriptions[category as keyof typeof productDescriptions];
 
+      const sizes = categorySizes[category];
+
     products.push({
       id: faker.string.uuid(),
       name: name,
@@ -97,6 +109,7 @@ export const generateFakeProducts = (count: number): Product[] => {
       image: faker.image.urlPicsumPhotos({ width: 300, height: 300 }),
       description: description,
       category: category,
+         sizes: sizes
     });
   }
 
