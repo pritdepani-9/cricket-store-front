@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import { generateFakeProducts, Product } from '../utils/fakeProducts';
 import ProductSort from '../features/product/ProductSort';
 import ProductFilter from '../features/product/ProductFilter';
+import axios from '../services/http'; 
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,6 +17,31 @@ const ProductList: React.FC = () => {
     setProducts(fakeData);
     setDisplayProducts(fakeData);
   }, []);
+
+
+  //   useEffect(() => {
+  // fetchProducts();
+  // }, []);
+
+   // 📌 Note:
+  // In this project, we usually generate fake data using 'faker' utilities for demonstration purposes.
+  // This axios call is just an example to show how you could fetch data from an API using our configured axios instance.
+  // In a real app, replace this with your actual endpoint or keep using faker data for mockups.
+
+  // ⚠️ Also — we're using Redux Toolkit for state management in this project.
+  // But for this isolated task/component, state management via local component state (useState) is sufficient.
+  // So, Redux integration is intentionally left out here.
+
+
+    // const fetchProducts = async () => {
+    //   try {
+    //     const response = await axios.get('/products');  // replace with your actual endpoint
+    //     setProducts(response.data);
+    //     setDisplayProducts(response.data);
+    //   } catch (error) {
+    //     console.error('Failed to fetch products:', error);
+    //   }
+    // };
 
   useEffect(() => {
   let filtered = [...products];
