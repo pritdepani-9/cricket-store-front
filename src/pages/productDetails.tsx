@@ -30,12 +30,12 @@ const ProductDetails: React.FC = () => {
     <div className="min-h-screen bg-gray-100">
       {/* Top Bar: Back & View Cart */}
       <div className="flex justify-between items-center bg-white shadow px-6 py-4 sticky top-0 z-10">
-        <button
-          onClick={() => navigate(-1)}
-          className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-full text-sm font-medium transition"
-        >
-          ←
-        </button>
+       <button
+  onClick={() => navigate(-1)}
+  className="text-gray-800 font-semibold py-2 px-5 rounded-full text-sm transition hover:bg-gray-100"
+>
+  ←
+</button>
 
         <div className="relative">
           <Link
