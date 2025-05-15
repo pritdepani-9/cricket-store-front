@@ -1,3 +1,6 @@
+
+// sorting products by category in the product list
+
 import React from 'react';
 
 interface SortProps {

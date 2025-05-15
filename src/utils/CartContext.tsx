@@ -1,3 +1,7 @@
+// CartContext provides and manages the cart item count state globally,
+// allowing components (like the View Cart button) to update and display the current cart count in real-time.
+
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { getCartItems } from './cartUtils';
 

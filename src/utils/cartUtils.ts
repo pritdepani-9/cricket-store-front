@@ -1,3 +1,9 @@
+// Utility functions to manage cart data in localStorage:
+// addToCart - adds/increments product in cart,
+// getCartItems - retrieves all cart items,
+// clearCart - clears the cart,
+// updateCartItemQuantity - updates or removes item quantity.
+
 import { Product } from './fakeProducts';
 
 export const addToCart = (product: Product) => {

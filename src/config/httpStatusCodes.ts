@@ -1,3 +1,6 @@
+// Sample HTTP status codes for reference (not used in this task)
+
+
 export const OK = 200; // Success
 export const CREATED = 201; // Success with result
 export const BAD_REQUEST = 400; // Bad Request

@@ -1,3 +1,6 @@
+// Cart page component to show cart items, update quantities, clear cart, and display total price
+
+
 import React, { useEffect, useState } from 'react';
 import { getCartItems, clearCart, updateCartItemQuantity } from '../utils/cartUtils';
 import { Product } from '../utils/fakeProducts';

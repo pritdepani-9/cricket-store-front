@@ -1,3 +1,11 @@
+// ProductList.tsx
+// This component serves as the main product listing page. It:
+// - Generates and displays a list of products (using fake data here for demo purposes)
+// - Provides filtering by category, sorting by price, and search functionality
+// - Updates displayed products dynamically based on user inputs
+// - (Commented-out code shows how to fetch real products via Axios for future integration)
+
+
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { generateFakeProducts, Product } from '../utils/fakeProducts';

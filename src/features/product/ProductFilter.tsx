@@ -1,3 +1,5 @@
+// filtering products by category in the product list
+
 import React from 'react';
 
 interface FilterProps {
@@ -5,7 +7,6 @@ interface FilterProps {
 }
 
 const ProductFilter: React.FC<FilterProps> = ({ onCategoryChange }) => {
-  // These categories should match exactly with what's in your generateFakeProducts
   const categories = [
     'Cricket Bats',
     'Cricket Balls',

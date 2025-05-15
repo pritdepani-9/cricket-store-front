@@ -1,3 +1,7 @@
+// Generates fake cricket product data including name, price, image, description, category, and sizes.
+// Uses predefined cricket product names, categories, sizes, and descriptions with Faker for realistic data.
+
+
 import { faker } from '@faker-js/faker';
 
 export interface Product {

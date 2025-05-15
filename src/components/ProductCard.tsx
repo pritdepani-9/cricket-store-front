@@ -1,3 +1,8 @@
+
+// ProductCard.tsx
+// This component represents a single product card showing product image, name, price, 
+// a short description, and buttons to add the product to the cart or view detailed info.
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Product } from '../utils/fakeProducts';

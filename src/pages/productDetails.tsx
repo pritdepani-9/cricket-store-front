@@ -1,3 +1,6 @@
+// ProductDetails page: shows detailed info for a selected product with size selection and add-to-cart functionality
+
+
 import React, { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { addToCart } from '../utils/cartUtils';
@@ -28,7 +31,6 @@ const ProductDetails: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Top Bar: Back & View Cart */}
       <div className="flex justify-between items-center bg-white shadow px-6 py-4 sticky top-0 z-10">
  <button
   onClick={() => navigate(-1)}
@@ -67,7 +69,6 @@ const ProductDetails: React.FC = () => {
             <p className="text-sm text-gray-500 mb-4">Category: {product.category}</p>
             <p className="text-2xl font-semibold text-green-600 mb-6">${product.price}</p>
             
-            {/* Size Selection */}
             {product.sizes.length > 1 && (
               <div className="mb-6">
                 <h3 className="text-lg font-medium text-gray-900 mb-3">Select Size</h3>

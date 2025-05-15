@@ -1,4 +1,5 @@
-// src/services/http.js
+// Sample axios setup file included for reference, not currently used in the project
+
 import axios from "axios";
 import { config } from "../config/config";
 import { UNAUTHORIZED } from "../config/httpStatusCodes";
@@ -16,7 +17,7 @@ instance.interceptors.response.use(
     if (response.status === UNAUTHORIZED) {
       window.location.href = config.appBaseUrl || '';
     }
-    if (response.status === 409) { // Changed from HttpStatusCode.Conflict
+    if (response.status === 409) {
       window.location.href = config.baseName || '';
     }
     throw error;

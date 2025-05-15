@@ -1,3 +1,6 @@
+// Home page component displaying header with cart count and product listing
+
+
 import ProductList from '../components/ProductList';
 import { Link } from 'react-router-dom';
 import { useCart } from '../utils/CartContext';
